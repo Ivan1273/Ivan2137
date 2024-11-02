@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа2" id="51">
+			<Behavior>Usual</Behavior>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="52"/>
+			<ChildItems>
+				<InputField name="Размерность" id="40">
+					<DataPath>Размерность</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размерность</v8:content>
+						</v8:item>
+					</Title>
+					<SpinButton>true</SpinButton>
+					<MinValue xsi:type="xs:decimal">0</MinValue>
+					<MaxValue xsi:type="xs:decimal">5</MaxValue>
+					<ContextMenu name="РазмерностьКонтекстноеМеню" id="41"/>
+					<ExtendedTooltip name="РазмерностьРасширеннаяПодсказка" id="42"/>
+					<Events>
+						<Event name="OnChange">РазмерностьПриИзменении</Event>
+					</Events>
+				</InputField>
+				<Button name="Заполнить" id="49">
+					<Type>UsualButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.Заполнить</CommandName>
+					<ExtendedTooltip name="ЗаполнитьРасширеннаяПодсказка" id="50"/>
+				</Button>
+				<Button name="Решить" id="45">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.РешитьНаКлиенте</CommandName>
+					<ExtendedTooltip name="РешитьРасширеннаяПодсказка" id="46"/>
+				</Button>
+				<Button name="РешитьНаСервере" id="53">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.РешитьНаСервере</CommandName>
+					<ExtendedTooltip name="РешитьНаСервереРасширеннаяПодсказка" id="54"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Таблицы" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ТаблицыРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<Table name="ЭлементВекторСтолбец" id="55">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>ВекторСтолбец</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ЭлементВекторСтолбецКонтекстноеМеню" id="56"/>
+					<AutoCommandBar name="ЭлементВекторСтолбецКоманднаяПанель" id="57"/>
+					<ExtendedTooltip name="ЭлементВекторСтолбецРасширеннаяПодсказка" id="58"/>
+					<SearchStringAddition name="ЭлементВекторСтолбецСтрокаПоиска" id="59">
+						<AdditionSource>
+							<Item>ЭлементВекторСтолбец</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЭлементВекторСтолбецСтрокаПоискаКонтекстноеМеню" id="60"/>
+						<ExtendedTooltip name="ЭлементВекторСтолбецСтрокаПоискаРасширеннаяПодсказка" id="61"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ЭлементВекторСтолбецСостояниеПросмотра" id="62">
+						<AdditionSource>
+							<Item>ЭлементВекторСтолбец</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЭлементВекторСтолбецСостояниеПросмотраКонтекстноеМеню" id="63"/>
+						<ExtendedTooltip name="ЭлементВекторСтолбецСостояниеПросмотраРасширеннаяПодсказка" id="64"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ЭлементВекторСтолбецУправлениеПоиском" id="65">
+						<AdditionSource>
+							<Item>ЭлементВекторСтолбец</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ЭлементВекторСтолбецУправлениеПоискомКонтекстноеМеню" id="66"/>
+						<ExtendedTooltip name="ЭлементВекторСтолбецУправлениеПоискомРасширеннаяПодсказка" id="67"/>
+					</SearchControlAddition>
+				</Table>
+				<Table name="ЭлементВекторСтрока" id="68">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>ВекторСтрока</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ЭлементВекторСтрокаКонтекстноеМеню" id="69"/>
+					<AutoCommandBar name="ЭлементВекторСтрокаКоманднаяПанель" id="70"/>
+					<ExtendedTooltip name="ЭлементВекторСтрокаРасширеннаяПодсказка" id="71"/>
+					<SearchStringAddition name="ЭлементВекторСтрокаСтрокаПоиска" id="72">
+						<AdditionSource>
+							<Item>ЭлементВекторСтрока</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЭлементВекторСтрокаСтрокаПоискаКонтекстноеМеню" id="73"/>
+						<ExtendedTooltip name="ЭлементВекторСтрокаСтрокаПоискаРасширеннаяПодсказка" id="74"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ЭлементВекторСтрокаСостояниеПросмотра" id="75">
+						<AdditionSource>
+							<Item>ЭлементВекторСтрока</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЭлементВекторСтрокаСостояниеПросмотраКонтекстноеМеню" id="76"/>
+						<ExtendedTooltip name="ЭлементВекторСтрокаСостояниеПросмотраРасширеннаяПодсказка" id="77"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ЭлементВекторСтрокаУправлениеПоиском" id="78">
+						<AdditionSource>
+							<Item>ЭлементВекторСтрока</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ЭлементВекторСтрокаУправлениеПоискомКонтекстноеМеню" id="79"/>
+						<ExtendedTooltip name="ЭлементВекторСтрокаУправлениеПоискомРасширеннаяПодсказка" id="80"/>
+					</SearchControlAddition>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="ЭлементРезультат" id="81">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Результат</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЭлементРезультатКонтекстноеМеню" id="82"/>
+			<AutoCommandBar name="ЭлементРезультатКоманднаяПанель" id="83"/>
+			<ExtendedTooltip name="ЭлементРезультатРасширеннаяПодсказка" id="84"/>
+			<SearchStringAddition name="ЭлементРезультатСтрокаПоиска" id="85">
+				<AdditionSource>
+					<Item>ЭлементРезультат</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЭлементРезультатСтрокаПоискаКонтекстноеМеню" id="86"/>
+				<ExtendedTooltip name="ЭлементРезультатСтрокаПоискаРасширеннаяПодсказка" id="87"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЭлементРезультатСостояниеПросмотра" id="88">
+				<AdditionSource>
+					<Item>ЭлементРезультат</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЭлементРезультатСостояниеПросмотраКонтекстноеМеню" id="89"/>
+				<ExtendedTooltip name="ЭлементРезультатСостояниеПросмотраРасширеннаяПодсказка" id="90"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЭлементРезультатУправлениеПоиском" id="91">
+				<AdditionSource>
+					<Item>ЭлементРезультат</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЭлементРезультатУправлениеПоискомКонтекстноеМеню" id="92"/>
+				<ExtendedTooltip name="ЭлементРезультатУправлениеПоискомРасширеннаяПодсказка" id="93"/>
+			</SearchControlAddition>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВекторСтолбец" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вектор столбец</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ВекторСтрока" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вектор строка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Результат" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Размерность" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размерность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+		<Command name="РешитьНаКлиенте" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Решить на клиенте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Решить на клиенте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Решить</Action>
+		</Command>
+		<Command name="РешитьНаСервере" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Решить на сервере</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Решить на сервере</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РешитьНаСервере</Action>
+		</Command>
+	</Commands>
+</Form>

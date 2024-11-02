@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.16">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаНачатьТестирование" id="42">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.НачатьТестирование</CommandName>
+				<ExtendedTooltip name="ФормаНачатьТестированиеРасширеннаяПодсказка" id="43"/>
+			</Button>
+			<Button name="ФормаЗакончитьТестирование" id="40">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗакончитьТестирование</CommandName>
+				<ExtendedTooltip name="ФормаЗакончитьТестированиеРасширеннаяПодсказка" id="41"/>
+			</Button>
+			<Button name="ФормаПечать" id="44">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Печать</CommandName>
+				<ExtendedTooltip name="ФормаПечатьРасширеннаяПодсказка" id="45"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="1">
+			<Group>AlwaysHorizontal</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Table name="СписокВопросов" id="3">
+					<Representation>List</Representation>
+					<CommandBarLocation>None</CommandBarLocation>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<DataPath>СписокВопросов</DataPath>
+					<RowPictureDataPath>СписокВопросов.Picture</RowPictureDataPath>
+					<ContextMenu name="СписокВопросовКонтекстноеМеню" id="4"/>
+					<AutoCommandBar name="СписокВопросовКоманднаяПанель" id="5"/>
+					<ExtendedTooltip name="СписокВопросовРасширеннаяПодсказка" id="6"/>
+					<SearchStringAddition name="СписокВопросовСтрокаПоиска" id="7">
+						<AdditionSource>
+							<Item>СписокВопросов</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокВопросовСтрокаПоискаКонтекстноеМеню" id="8"/>
+						<ExtendedTooltip name="СписокВопросовСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СписокВопросовСостояниеПросмотра" id="10">
+						<AdditionSource>
+							<Item>СписокВопросов</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокВопросовСостояниеПросмотраКонтекстноеМеню" id="11"/>
+						<ExtendedTooltip name="СписокВопросовСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СписокВопросовУправлениеПоиском" id="13">
+						<AdditionSource>
+							<Item>СписокВопросов</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СписокВопросовУправлениеПоискомКонтекстноеМеню" id="14"/>
+						<ExtendedTooltip name="СписокВопросовУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">СписокВопросовВыбор</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="СписокВопросовЗначение" id="16">
+							<DataPath>СписокВопросов.Value</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СписокВопросовЗначениеКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="СписокВопросовЗначениеРасширеннаяПодсказка" id="18"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="Группа2" id="19">
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="20"/>
+					<ChildItems>
+						<InputField name="ТекущийВопросТекст" id="37">
+							<DataPath>ТекущийВопросТекст</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="ТекущийВопросТекстКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ТекущийВопросТекстРасширеннаяПодсказка" id="39"/>
+						</InputField>
+						<Table name="СписокОтветовВопроса" id="21">
+							<Representation>List</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<Header>false</Header>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<DataPath>СписокОтветовВопроса</DataPath>
+							<RowPictureDataPath>СписокОтветовВопроса.Picture</RowPictureDataPath>
+							<ContextMenu name="СписокОтветовВопросаКонтекстноеМеню" id="22"/>
+							<AutoCommandBar name="СписокОтветовВопросаКоманднаяПанель" id="23"/>
+							<ExtendedTooltip name="СписокОтветовВопросаРасширеннаяПодсказка" id="24"/>
+							<SearchStringAddition name="СписокОтветовВопросаСтрокаПоиска" id="25">
+								<AdditionSource>
+									<Item>СписокОтветовВопроса</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокОтветовВопросаСтрокаПоискаКонтекстноеМеню" id="26"/>
+								<ExtendedTooltip name="СписокОтветовВопросаСтрокаПоискаРасширеннаяПодсказка" id="27"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокОтветовВопросаСостояниеПросмотра" id="28">
+								<AdditionSource>
+									<Item>СписокОтветовВопроса</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокОтветовВопросаСостояниеПросмотраКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="СписокОтветовВопросаСостояниеПросмотраРасширеннаяПодсказка" id="30"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокОтветовВопросаУправлениеПоиском" id="31">
+								<AdditionSource>
+									<Item>СписокОтветовВопроса</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокОтветовВопросаУправлениеПоискомКонтекстноеМеню" id="32"/>
+								<ExtendedTooltip name="СписокОтветовВопросаУправлениеПоискомРасширеннаяПодсказка" id="33"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="СписокОтветовВопросаПометка" id="48">
+									<DataPath>СписокОтветовВопроса.Check</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СписокОтветовВопросаПометкаКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="СписокОтветовВопросаПометкаРасширеннаяПодсказка" id="50"/>
+									<Events>
+										<Event name="OnChange">СписокОтветовВопросаПометкаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="СписокОтветовВопросаЗначение" id="34">
+									<DataPath>СписокОтветовВопроса.Value</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+									<ContextMenu name="СписокОтветовВопросаЗначениеКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="СписокОтветовВопросаЗначениеРасширеннаяПодсказка" id="36"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+						<Button name="Ответить" id="46">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Ответить</CommandName>
+							<ExtendedTooltip name="ОтветитьРасширеннаяПодсказка" id="47"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.Обработка1</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Модель" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Модель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Текст" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОтветВыборПользователя" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответ выбор пользователя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОтветВерный" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответ верный</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РежимТрактовки" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Режим трактовки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="МножественныйВыбор" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Множественный выбор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ОтвеченоВерно" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отвечено верно</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СостояниеПроцесса" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние процесса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийВопросИндентификатор" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий вопрос индентификатор</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийВопросТекст" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий вопрос текст</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокВопросов" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список вопросов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокОтветовВопроса" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список ответов вопроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НачатьТестирование" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начать тестирование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начать тестирование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НачатьТестирование</Action>
+		</Command>
+		<Command name="ЗакончитьТестирование" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закончить тестирование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закончить тестирование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗакончитьТестирование</Action>
+		</Command>
+		<Command name="Печать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Печать</Action>
+		</Command>
+		<Command name="Ответить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Ответить</Action>
+		</Command>
+	</Commands>
+</Form>
